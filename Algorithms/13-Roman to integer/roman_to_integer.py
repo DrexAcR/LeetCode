@@ -13,7 +13,7 @@ class Solution:
         }
         for i in range(len(s)):
             value = roman_nums_dict[s[i]]
-            # if next symbol is larger, this is subtractive
+            # changing the value depending on if it increases or decreases
             if i + 1 < len(s) and roman_nums_dict[s[i+1]] > value:
                 total -= value
             else:
