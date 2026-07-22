@@ -3,4 +3,4 @@ class Solution:
         isValid = False
         stack = []
         mapping = {")": "(", "}": "{", "]": "["}
-        
+        # Configuration test
