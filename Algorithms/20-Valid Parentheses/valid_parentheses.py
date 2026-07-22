@@ -1,6 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        isValid = False
+        
         stack = []
         mapping = {")": "(", "}": "{", "]": "["}
-        # Configuration test
+        for c in s:
+            if c in mapping:
+                top_element = stack.pop() if stack else '#'
+                if mapping[c] != top_element:
+                    return False
+            else:
+                stack.append(c)
+        return True if not stack else False
+
+
+s = Solution()
+print(s.isValid("([)]"))
